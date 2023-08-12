@@ -1,0 +1,26 @@
+<script props>
+    module.exports = {
+      align: {
+        left: 'text-left',
+        center: 'text-center',
+        right: 'text-right',
+      }[props.align],
+      href: props.href,
+      msoPt: props['mso-pt'] || '16px',
+      msoPr: props['mso-pr'] || '32px',
+      msoPb: props['mso-pb'] || '30px',
+      msoPl: props['mso-pl'] || '32px',
+      imgSrc: props['imgSrc'],
+      heading: props['heading'],
+      content: props['content'],
+      knowMore: props['knowMore']
+    }
+  </script>
+  
+  <div role="case-study-card" class="{{ align }} rounded-lg bg-white overflow-hidden mb-6">
+        <img src="{{imgSrc}}" class="h-80 w-full" />
+        <slot:title />
+        <slot:content />
+        <slot:cta />
+  </div>
+  
